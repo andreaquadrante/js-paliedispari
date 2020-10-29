@@ -1,6 +1,6 @@
 // creo una funzione per invertire una stringa
-var reverseString = '';
 function reverse (string) {
+  var reverseString = '';
   for (var i = string.length; i >= 0; i--) {
     reverseString += string.charAt(i);
   }
@@ -8,26 +8,25 @@ function reverse (string) {
 }
 
 // creo una funzione per verificare se la parola è palindroma o meno
-var palindrome = false;
-function isPalindrome (userWord) {
-  if (userWord == reverseString) {
-    palindrome = true;
-  }
-  return palindrome;
+function isPalindrome (word) {
+  var reverseWord = reverse (word);
+  return word == reverseWord;
 }
 
 // chiedo all'utente di inserire una parola
-var userWord = prompt('Inserisci la parola da verificare');
+var userWord = prompt('Inserisci la parola da verificare').toLowerCase();
 
 // eseguo le funzioni create in precedenza per verificare se la parola inserita dall'utente è palindroma o meno
-reverse (userWord);
-isPalindrome (userWord);
-console.log (userWord);
-console.log (reverseString);
-console.log (palindrome);
+var reverseUserWord = reverse (userWord);
+var isUserWordPalindrome = isPalindrome (userWord);
 
+// definisco un messaggio da visualizzare per comunicare il risultato della verifica
 var message = 'La parola inserita non è palindroma';
-if (palindrome = true) {
+if (isUserWordPalindrome) {
   message = 'La parola inserita è palindroma';
 }
-console.log (message);
+
+console.log ('PAROLA INSERITA', userWord);
+console.log ('PAROLA INSERITA INVERTITA', reverseUserWord);
+console.log ('PALINDROMA O NO?', isUserWordPalindrome);
+console.log ('RISULTATO', message);
