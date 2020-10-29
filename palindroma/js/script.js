@@ -7,7 +7,7 @@ function reverse (string) {
   return reverseString;
 }
 
-// creo una funzione per verificare se la parola è palindroma o meno
+// creo una funzione per verificare se una parola è palindroma
 function isPalindrome (word) {
   var reverseWord = reverse (word);
   return word == reverseWord;
